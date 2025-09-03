@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: .5rem .5rem;
+        color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+        background-color: #fbf9f9;
+        }
+
+        .back-btn .icon {
+        width: 16px;
+        height: 16px;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chronoir</title>
 </head>
 <body>
-    
+    <button onclick="history.back()" class="back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            class="icon">
+            <path stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M15 19l-7-7 7-7" />
+        </svg>
+        </button>
 </body>
 </html>

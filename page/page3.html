@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designed</title>
+    <style>
+
+        
+        .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: .5rem .5rem;
+        color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+        background-color: #fbf9f9;
+        }
+
+        .back-btn .icon {
+        width: 16px;
+        height: 16px;
+        }
+    
+        body {
+        overflow-x: hidden;
+        gap: 2rem;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        align-items: top;
+        height: 100vh;
+        width: 100vw;
+        background: #f5f5f5;
+        font-family: sans-serif;
+
+        line-height:.9;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .grid-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .grid-container img:hover {
+  transform: scale(1.4);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+    </style>
+</head>
+<header>
+    <button onclick="history.back()" class="back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            class="icon">
+            <path stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M15 19l-7-7 7-7" />
+        </svg>
+        </button>
+<body>
+    
+    <h1>Fashion</h1>
+    <div class="grid-container" id="grid-container-yohji"></div>
+
+    <script>
+        const folderPath = '/images/yohji/'; // Path to your folder containing images
+        const imageCount = 12; // Number of images in the folder
+        const gridContainer = document.getElementById('grid-container-yohji');
+
+        for (let i = 1; i <= imageCount; i++) {
+            const img = document.createElement('img');
+            img.src = `${folderPath}yohji_${i}.jpg` ; // Assuming images are named image1.jpg, image2.jpg, etc.
+            img.alt = `Design ${i}`;
+            gridContainer.appendChild(img);
+        }
+    </script>
+    <p>Fashion here isn’t about polish — it’s about distortion, deconstruction, and the beauty of fragments. Layers collapse, seams twist, silhouettes break rules on purpose. It’s gear built for motion, rebellion, and survival in a future that already feels broken. Cool shit for people who don’t just wear clothes — they weaponize them.</p>
+</body>
+</html>
